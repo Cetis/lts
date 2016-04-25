@@ -38,7 +38,8 @@ public class CompleteInstitution {
 	final String[] attributes2010 = {"rank", IGNORE, "University Name", "Entry Standards", "Student Satisfaction", "Research Quality", "Graduate Prospects", "Student-staff Ratio", "Academic Services Spend", "Facilities Spend", "Good Honours", "Degree Completion", "Green Score", "Overall Score"};
 	// Research Intensity added 2016
 	final String[] attributes2016 = {"rank", IGNORE, "University Name", "Entry Standards", "Student Satisfaction", "Research Quality", "Research Intensity", "Graduate Prospects", "Student-staff Ratio", "Academic Services Spend", "Facilities Spend", "Good Honours", "Degree Completion", "Green Score", "Overall Score"};
-
+	// Green Score removed 2017
+	final String[] attributes2017 = {"rank", IGNORE, "University Name", "Entry Standards", "Student Satisfaction", "Research Quality", "Research Intensity", "Graduate Prospects", "Student-staff Ratio", "Academic Services Spend", "Facilities Spend", "Good Honours", "Degree Completion", "Overall Score"};
 	
 	public void output(int start,int end) throws MalformedURLException, IOException, XPatherException{
 		
@@ -74,6 +75,7 @@ public class CompleteInstitution {
 			String[] attributes = attributes2008;
 			if (year >= 2010) attributes = attributes2010;
 			if (year >= 2016) attributes = attributes2016;
+			if (year >= 2017) attributes = attributes2017;
 			
 			dataItem.data.put("year", String.valueOf(year));
 			
