@@ -15,15 +15,13 @@ public class CompleteInstitutionsTest {
 		List<InstitutionDataItem> data = complete.getData(2010);
 
 		for (InstitutionDataItem item : data){
-			System.out.println(item.getHeadings());
-			System.out.println(item.toString());
 		}
 	}
 	
 	@Test
 	public void output() throws MalformedURLException, IOException, XPatherException{
 		CompleteInstitution complete = new CompleteInstitution();
-		complete.output(2008, 2016);
+		complete.output(2008, 2017);
 	}
 
 }

@@ -12,7 +12,7 @@ public class CompleteSubjectsTest {
 	@Test
 	public void output() throws MalformedURLException, IOException, XPatherException{
 		CompleteBySubject complete = new CompleteBySubject();
-		complete.output(2010, 2016);
+		complete.output(2010, 2017);
 	}
 
 }
