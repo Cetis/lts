@@ -44,6 +44,9 @@ public class CompleteBySubject {
 		
 		String[] subjects = getSubjects();
 		
+				System.out.println("subjects "+subjects.length);
+
+		
 		//
 		// for each year, and each subject, get the data
 		//
@@ -52,7 +55,6 @@ public class CompleteBySubject {
 				data.addAll(getData(y, subjects[s]));
 			}
 		}
-		
 		File outputFile = new File("complete-subjects-"+start+"-"+end+".csv");
 		String headings = data.get(0).getHeadings() + "\n";
 		FileUtils.write(outputFile, headings);
@@ -60,7 +62,7 @@ public class CompleteBySubject {
 	}
 	
 	public List<SubjectDataItem> getData(int year, String subject) throws MalformedURLException, IOException, XPatherException{
-		
+	
 		//
 		// Encode the subject query
 		//
@@ -122,11 +124,11 @@ public class CompleteBySubject {
 		// Read and clean HTML
 		// 
 		TagNode cleaned = ScraperUtils.getCleanedHtml("http://www.thecompleteuniversityguide.co.uk/league-tables/rankings");
-
+		
 		//
 		// Pull out subjects using XPath.
 		//
-		Object[] matches = cleaned.evaluateXPath("//div[@class='facet hidden'][1]/ul[@class='links']/li/a/text()");
+		Object[] matches = cleaned.evaluateXPath("//div[@class='facet hidden facettable'][2]/ul[@class='links']/li/a/text()");
 
 		String[] subjects = new String[matches.length];
 
